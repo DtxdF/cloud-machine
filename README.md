@@ -20,7 +20,7 @@ Once the virtual machine is up and running, it has AppJail installed (and config
 
 ## Goals
 
-This is an internal project to deploy virtual machines using vm-bhyve around all my machines even if they are not physically in the same location. I have found that I can designate certain responsibilities or tasks to specific virtual machines to get a better organization of all my systems. This is of course motivated to use my other project, AppJail, and all the other meta-projects ([Director](https://github.com/DtxdF/director)], [LittleJet](https://github.com/DtxdF/LittleJet), [Reproduce](https://github.com/DtxdF/reproduce), etc.).
+This is an internal project to deploy virtual machines using vm-bhyve around all my machines even if they are not physically in the same location. I have found that I can designate certain responsibilities or tasks to specific virtual machines to get a better organization of all my systems. This is of course motivated to use my other project, AppJail, and all the other meta-projects ([Director](https://github.com/DtxdF/director), [LittleJet](https://github.com/DtxdF/LittleJet), [Reproduce](https://github.com/DtxdF/reproduce), etc.).
 
 I have no intention of running a Linux distro or even Windows, or even another *BSD system other than FreeBSD. This is intentional because I use FreeBSD whenever I can. However, note that the scripts are really customizable or easy to change, so if you are an adventurous user, you can fork this project and modify it to suit your needs. 
 
