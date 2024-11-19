@@ -1,0 +1,1 @@
+This script will choose a free name like vm001, vm002, ..., vmNNNN and call the profile defined in the `profiles/` directory. It will create a directory named `dirty` and an empty file with the VM name. If the virtual machine is created successfully, this empty file is deleted. This empty file is a hint to you or another script or program that the VM was not created successfully.

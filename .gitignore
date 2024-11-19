@@ -1,0 +1,5 @@
+/.lock
+/dirty
+/components
+/cluster/logs
+/env

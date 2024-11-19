@@ -1,0 +1,69 @@
+{
+    // Node identifier.
+    "node-id" : "node001",
+    // Default profile when none is selected.
+    "default-profile" : "CS0",
+    // List of available profiles.
+    "profiles" : [
+        "CS0",
+        "CS1",
+        "CS2",
+        "CS3",
+        "CS4",
+        "CS5"
+    ],
+    // The algorithm for choosing the host to send the job to in order to create a VM.
+    "select-algo" : "less-latency",
+    // If the algorithm requires an argument, it is used when no argument is specified.
+    "select-arg" : null,
+    // The host to submit jobs or monitor the pipes. Usually '127.0.0.1' is sufficient.
+    "local" : "127.0.0.1",
+    // The host where the jobs are sent.
+    "reporter" : "127.0.0.1",
+    // A list of hosts that the selection algorithm will choose.
+    "hosts" : [
+        "127.0.0.1"
+    ],
+    // See 'ttr' in the beanstalkd documentation.
+    // This parameter is also used as a timeout for executing some commands. The timeout
+    // is (ttr-2). See also 'timeout.sh' for more information.
+    "ttr" : "1h",
+    // If the host has reached its limits or is overloaded, it will forward the job to
+    // the host specified by the 'forward.next' parameter.
+    // 'forward.max' is the forwarding limit, so the job is not forwarded forever. This
+    // also avoids a loop due to incorrect configuration.
+    "forward" : {
+        "next" : null,
+        "max" : 0
+    },
+    // The limits that this host has. This, of course, may not correspond to the physical
+    // limits, and I recommend that you use less than the physical ones because the operating system may need them.
+    "limits" : {
+        "memory" : "4G",
+        "storage" : "120G"
+    },
+    // How long to wait before sending metrics to the 'reporter', in this case 'metrics.delay'.
+    // 'metrics.skew' is used to wait a random time between 1 and 'metrics.skew' after
+    // waiting for 'metrics.delay'.
+    "metrics" : {
+        "delay" : "1h",
+        "skew" : 6
+    },
+    // Log maintenance. Logs can be removed when the total number of logs equals or exceeds
+    // 'logs.remove-count' or when the duration of logs equals or exceeds
+    // 'logs.remove-after.{years|weeks|days|hours|minutes|seconds}'.
+    "logs" : {
+        "remove-after" : {
+            "days" : 1
+        },
+        "remove-count" : 64
+    }
+    // How to consider that the host is overloaded. It can be memory usage (memory-usage),
+    // total bytes transmitted (tx) or received (rx) over the network or an rctl(8) resource.
+    //,{
+    //    "rctl" : {
+    //        "vmemoryuse" : "5G"
+    //    },
+    //    "tx" : "512G"
+    //}
+}

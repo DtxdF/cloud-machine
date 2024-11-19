@@ -1,0 +1,9 @@
+appjail-devel
+py311-director
+git-lite
+debootstrap
+tailscale
+dnsmasq
+cpdup
+wireguard-tools
+terminfo-db

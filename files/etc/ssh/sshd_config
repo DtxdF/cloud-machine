@@ -1,0 +1,28 @@
+# Ports
+Port 22
+
+# Authentication
+PubkeyAuthentication yes
+AuthenticationMethods publickey
+PermitRootLogin prohibit-password
+PrintMotd no
+
+# Forwarding
+X11Forwarding no
+AllowAgentForwarding yes
+
+# Connection checks
+ClientAliveCountMax 3
+ClientAliveInterval 15
+
+# Compression
+Compression no
+
+# Limits
+LoginGraceTime 40
+
+# Public keys
+AuthorizedKeysFile      /etc/ssh/authorized_keys
+
+# SFTP
+Subsystem sftp internal-sftp
