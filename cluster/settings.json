@@ -27,6 +27,9 @@
     // See 'ttr' in the beanstalkd documentation.
     // This parameter is also used as a timeout for executing some commands. The timeout
     // is (ttr-2). See also 'timeout.sh' for more information.
+    //
+    // Note: If you have a slow storage device, increase the hours. On my SSD I don't need to
+    //       do that, but on another host that uses an HDD I do.
     "ttr" : "1h",
     // If the host has reached its limits or is overloaded, it will forward the job to
     // the host specified by the 'forward.next' parameter.
