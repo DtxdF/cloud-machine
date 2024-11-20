@@ -31,7 +31,7 @@ main()
     local size="${SIZE:-20G}"
     local swap="${SWAP:-4G}"
     local chroot_script="${CHROOT_SCRIPT:-${BASEDIR}/local.sh}"
-    local resolv_Conf="${RESOLV_CONF:-/etc/resolv.conf}"
+    local resolv_conf="${RESOLV_CONF:-/etc/resolv.conf}"
 
     handle_signals
 
@@ -193,7 +193,7 @@ EOF
     rm -f "${vm_mntdir}/etc/resolv.conf" || exit $?
 
     if [ -f "${resolv_conf}" ]; then
-        info "Copying '${resolv_Conf}' as the resolv.conf(5) file"
+        info "Copying '${resolv_conf}' as the resolv.conf(5) file"
 
         cp -a "${resolv_conf}" "${vm_mntdir}/etc/resolv.conf" || exit $?
     else
