@@ -17,7 +17,7 @@ main()
     vm="$1"
 
     if [ -n "${VPN_NODE}" ]; then
-        NODE_ID=`jq -r '.["node-id"]' < "${BASEDIR}/cluster/settings.json"`
+        NODE_ID=`"${BASEDIR}/jq.sh" "${BASEDIR}/cluster/settings.json" -r '.["node-id"]'`
         VPN_PEER="peer://vm/${NODE_ID}/${vm}"
 
         if ssh -- "${VPN_NODE}" check "${VPN_PEER}"; then

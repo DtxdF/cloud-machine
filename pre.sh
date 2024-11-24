@@ -1,5 +1,8 @@
 #!/bin/sh
 
+BASEDIR=`dirname -- "$0"` || exit $?
+BASEDIR=`realpath -- "${BASEDIR}"` || exit $?
+
 TAGS=
 BLOCKSTORAGE=
 
@@ -61,7 +64,7 @@ if [ -n "${BLOCKSTORAGE}" ]; then
 fi
 
 if [ -n "${VPN_NODE}" ]; then
-    NODE_ID=`jq -r '.["node-id"]' < "${WRKDIR}/cluster/settings.json"`
+    NODE_ID=`"${BASEDIR}/jq.sh" "${WRKDIR}/cluster/settings.json" -r '.["node-id"]'`
     VPN_PEER="peer://vm/${NODE_ID}/${VMNAME}"
 
     if ! ssh -- "${VPN_NODE}" check "${VPN_PEER}"; then
