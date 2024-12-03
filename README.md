@@ -79,6 +79,7 @@ cp host/dhcpd.conf /usr/local/etc/dhcpd.conf
 cp host/loader.conf /boot/loader.conf
 cp host/pf.conf /etc/pf.conf
 cp host/rc.conf /etc/rc.conf
+cp host/sysctl.conf /etc/sysctl.conf
 cp host/supervisord.conf /usr/local/etc/supervisord.conf
 mkdir -p /usr/local/etc/supervisord.d
 cp host/supervisord.d/cloud-machine.ini /usr/local/etc/supervisord.d
