@@ -60,15 +60,15 @@ cp templates/*.conf /cloud-machine/vm/.templates
 . env/bin/activate
 pip install -r requirements.txt
 mkdir -p components
-fetch -o components/MANIFEST 'https://download.freebsd.org/releases/amd64/14.1-RELEASE/MANIFEST'
-fetch -o components/base.txz 'https://download.freebsd.org/releases/amd64/14.1-RELEASE/base.txz'
-fetch -o components/kernel.txz 'https://download.freebsd.org/releases/amd64/14.1-RELEASE/kernel.txz'
+fetch -o components/MANIFEST 'https://download.freebsd.org/releases/amd64/14.2-RELEASE/MANIFEST'
+fetch -o components/base.txz 'https://download.freebsd.org/releases/amd64/14.2-RELEASE/base.txz'
+fetch -o components/kernel.txz 'https://download.freebsd.org/releases/amd64/14.2-RELEASE/kernel.txz'
 mkdir -p cluster/logs
 echo "tmpfs /cloud-machine/scripts/cluster/logs tmpfs rw,late 0 0" | tee -a /etc/fstab
 mount /cloud-machine/scripts/cluster/logs
 ```
 
-**Note**: You can use a different version other than `14.1-RELEASE`.
+**Note**: You can use a different version other than `14.2-RELEASE`.
 
 ### Configuration
 
